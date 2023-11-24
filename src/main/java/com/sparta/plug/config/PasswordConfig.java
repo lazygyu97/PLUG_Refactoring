@@ -7,7 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class PasswordConfig { // passwordConfig 형태로 Bean에 등록된다.
-
+    // pull request test
     @Bean  // Bean의 수동 등록 -> 스프링 서버가 실행 될때 spring ioc container에 bean으로 저장된다.
     public PasswordEncoder passwordEncoder() { //PasswordEncoder는 interface이기 때문에 구현체를 만들어 줘야한다.
 
