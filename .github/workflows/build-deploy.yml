@@ -12,7 +12,7 @@ env:
   BUCKET_NAME: plug-cicd-bucket
   CODE_DEPLOY_APP_NAME: plug_cicd
   DEPLOYMENT_GROUP_NAME: plug_cicd
-# --------------------------추가
+# ---------------------------추가
 
 jobs:
   deploy:
