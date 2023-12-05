@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
-PROJECT_ROOT="/home/ubuntu/plug"
-JAR_FILE="$PROJECT_ROOT/plug-0.0.1-SNAPSHOT.jar"
+REPOSITORY=/home/ubuntu/plug
+cd $REPOSITORY
 
-DEPLOY_LOG="$PROJECT_ROOT/deploy.log"
+APP_NAME=plug
+JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep '-0.0.1-SNAPSHOT.jar' | tail -n 1)
+JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
-TIME_NOW=$(date +%c)
+CURRENT_PID=$(pgrep -f $APP_NAME)
 
-# 현재 구동 중인 애플리케이션 pid 확인
-CURRENT_PID=$(pgrep -f $JAR_FILE)
-
-# 프로세스가 켜져 있으면 종료
-if [ -z $CURRENT_PID ]; then
-  echo "$TIME_NOW > 현재 실행중인 애플리케이션이 없습니다" >> $DEPLOY_LOG
+if [ -z $CURRENT_PID ]
+then
+  echo "> 종료할 애플리케이션이 없습니다."
 else
-  echo "$TIME_NOW > 실행중인 $CURRENT_PID 애플리케이션 종료 " >> $DEPLOY_LOG
+  echo "> kill -9 $CURRENT_PID"
   kill -15 $CURRENT_PID
+  sleep 5
 fi
 
 echo "> Deploy - $JAR_PATH "
