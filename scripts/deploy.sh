@@ -1,5 +1,5 @@
 REPOSITORY1=/home/ubuntu
-REPOSITORY=/home/ubuntu/app
+REPOSITORY=/home/ubuntu/plug
 PROJECT_NAME=plug
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"

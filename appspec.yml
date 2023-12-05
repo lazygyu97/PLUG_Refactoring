@@ -4,20 +4,12 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/plug
-    overwrite: yes
-
-file_exists_behavior: OVERWRITE
-
 permissions:
-  - object: /
-    pattern: "**"
+  - object: /home/ubuntu/plug/
     owner: ubuntu
     group: ubuntu
-
 hooks:
-  hooks:
-    AfterInstall:
-      - location: scripts/deploy.sh
-        timeout: 60
-        runas: ubuntu
-
+  AfterInstall:
+    - location: scripts/deploy.sh
+      timeout: 60
+      runas: ubuntu
