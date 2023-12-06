@@ -38,7 +38,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           
-      # Gradle 스크립트 실행 전 실행 권한을 부여합니다.
+    # Gradle 스크립트 실행 전 실행 권한을 부여합니다.
       - name: gradlew 권한 부여
         run: chmod +x ./gradlew
         shell: bash        
