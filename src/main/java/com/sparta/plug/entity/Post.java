@@ -1,8 +1,6 @@
 package com.sparta.plug.entity;
 
 import com.sparta.plug.dto.PostRequestDto;
-import com.sparta.plug.security.UserDetailsImpl;
-import com.wrapper.spotify.model_objects.specification.Playlist;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
