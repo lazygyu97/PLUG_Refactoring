@@ -48,8 +48,7 @@ dependencies {
 
     //spotify API
     //참조 문헌 : https://chaerim1001.tistory.com/51
-    implementation 'com.github.thelinmichael:spotify-web-api-java:master-SNAPSHOT'
-
+    implementation 'se.michaelthelin.spotify:spotify-web-api-java:8.3.4'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
