@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
 REPOSITORY=/home/ubuntu/plug
+TARGET=/home/ubuntu/plug/build
+
+
+if [ -d $TARGET ]
+then
+  echo "> Removing existing directory: $REPOSITORY"
+  sudo rm -rf $TARGET
+fi
+
 cd $REPOSITORY
 
 APP_NAME=plug
@@ -8,6 +17,7 @@ JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
 CURRENT_PID=$(pgrep -f $APP_NAME)
+
 
 if [ -z $CURRENT_PID ]
 then
