@@ -7,7 +7,7 @@ TARGET=/home/ubuntu/plug/build
 if [ -d $TARGET ]
 then
   echo "> Removing existing directory: $REPOSITORY"
-  sudo rm -rf $TARGET
+  sudo rm -rf $REPOSITORY
 fi
 
 cd $REPOSITORY
