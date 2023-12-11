@@ -16,6 +16,10 @@ permissions:
 # 배포단계에서 진행하는 훅 스크립트를 정의합니다.
 hooks:
   AfterInstall:
-    - location: scripts/deploy.sh
+    - location: scripts/stop.sh
+      timeout: 60
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start.sh
       timeout: 60
       runas: ubuntu
